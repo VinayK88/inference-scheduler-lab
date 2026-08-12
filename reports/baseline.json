@@ -1,0 +1,76 @@
+{
+  "experiment": "inference-scheduler-policy-comparison-v0.1",
+  "workload": {
+    "request_count": 160,
+    "seed": 17,
+    "arrival_pattern": "bursty",
+    "request_mix": "chat, analysis, long-context"
+  },
+  "server": {
+    "token_work_per_ms": 42.0,
+    "max_batch_size": 12,
+    "kv_capacity_tokens": 6400
+  },
+  "results": [
+    {
+      "policy": "fcfs",
+      "requests_completed": 160,
+      "throughput_output_tokens_per_second": 6469.314079422383,
+      "mean_latency_ms": 480.475,
+      "p50_latency_ms": 436.5,
+      "p95_latency_ms": 932.3499999999999,
+      "p95_time_to_first_token_ms": 930.3499999999999,
+      "slo_attainment": 0.2125,
+      "jain_fairness": 0.1483686079997466,
+      "peak_kv_utilization": 0.18765625,
+      "makespan_ms": 1385,
+      "throughput_gain_vs_fcfs": 0.0,
+      "p95_latency_change_vs_fcfs": 0.0
+    },
+    {
+      "policy": "static_batch",
+      "requests_completed": 160,
+      "throughput_output_tokens_per_second": 14736.842105263158,
+      "mean_latency_ms": 94.50625,
+      "p50_latency_ms": 82.0,
+      "p95_latency_ms": 189.24999999999991,
+      "p95_time_to_first_token_ms": 188.09999999999997,
+      "slo_attainment": 0.83125,
+      "jain_fairness": 0.4646363734627046,
+      "peak_kv_utilization": 0.803125,
+      "makespan_ms": 608,
+      "throughput_gain_vs_fcfs": 1.2779605263157894,
+      "p95_latency_change_vs_fcfs": -0.7970182871239342
+    },
+    {
+      "policy": "continuous_batch",
+      "requests_completed": 160,
+      "throughput_output_tokens_per_second": 18398.35728952772,
+      "mean_latency_ms": 32.46875,
+      "p50_latency_ms": 25.0,
+      "p95_latency_ms": 82.14999999999995,
+      "p95_time_to_first_token_ms": 77.09999999999997,
+      "slo_attainment": 1,
+      "jain_fairness": 0.8105705572357533,
+      "peak_kv_utilization": 1.0,
+      "makespan_ms": 487,
+      "throughput_gain_vs_fcfs": 1.8439425051334704,
+      "p95_latency_change_vs_fcfs": -0.9118893119536655
+    },
+    {
+      "policy": "slo_aware",
+      "requests_completed": 160,
+      "throughput_output_tokens_per_second": 18137.65182186235,
+      "mean_latency_ms": 30.225,
+      "p50_latency_ms": 21.0,
+      "p95_latency_ms": 80.04999999999998,
+      "p95_time_to_first_token_ms": 71.09999999999997,
+      "slo_attainment": 1,
+      "jain_fairness": 0.8511237821907028,
+      "peak_kv_utilization": 1.0,
+      "makespan_ms": 494,
+      "throughput_gain_vs_fcfs": 1.8036437246963564,
+      "p95_latency_change_vs_fcfs": -0.9141416849895425
+    }
+  ]
+}
