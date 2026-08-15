@@ -11,6 +11,16 @@ This lab compares four scheduling policies on the **same bursty workload** while
 
 ![Scheduler policy frontier](assets/policy-frontier.svg)
 
+## 60-second reviewer path
+
+Short on time? Review the project in this order:
+
+1. [Start with the systems question](#the-question).
+2. [Compare the scheduling policies](#policies-under-test).
+3. [Run the reproducible experiment](#run-it).
+4. [Read an example result correctly](#example-interpretation).
+5. [Inspect the modeling assumptions](#modeling-choices).
+
 ## The question
 
 How should an inference server admit and batch mixed chat, analysis, and long-context requests when accelerator work and KV-cache capacity are finite?
