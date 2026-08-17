@@ -7,6 +7,8 @@
 ![Dependencies](https://img.shields.io/badge/runtime-stdlib--only-22c55e)
 ![License](https://img.shields.io/badge/license-MIT-8b5cf6)
 
+![Inference Scheduler Lab dashboard preview](assets/dashboard-preview.svg)
+
 This lab compares four scheduling policies on the **same bursty workload** while tracking throughput, tail latency, time-to-first-token, SLO attainment, fairness, and KV-cache pressure. The simulator is small enough to audit line by line and rich enough to make the trade-offs visible.
 
 ![Scheduler policy frontier](assets/policy-frontier.svg)
